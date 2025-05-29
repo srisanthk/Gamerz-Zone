@@ -1,174 +1,276 @@
-/* Reset and base styles */
+/* Global Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0d0d0d;
+  color: #e0e0e0;
   line-height: 1.6;
-  background-color: #f4f4f4;
-  color: #333;
 }
 
-/* Header and Navigation */
 header {
-  background-color: #222;
-  color: #fff;
-  padding: 20px 0;
+  background: #111;
+  padding: 30px 20px;
   text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 255, 204, 0.2);
+}
+
+header h1 {
+  font-size: 3rem;
+  color: #00ffcc;
+  text-shadow: 0 0 15px #00ffcc;
+}
+
+nav {
+  background: #1a1a1a;
+  padding: 15px 0;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,255,204,0.1);
 }
 
 nav ul {
-  list-style: none;
   display: flex;
   justify-content: center;
-  background-color: #444;
+  flex-wrap: wrap;
+  list-style: none;
 }
 
 nav ul li {
-  margin: 0 15px;
+  margin: 0 20px;
 }
 
 nav ul li a {
   color: #fff;
   text-decoration: none;
-  padding: 14px 20px;
-  display: block;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-  background-color: #555;
+  color: #00ffcc;
 }
 
-/* Hero Section */
-#hero {
-  background-color: #e2e2e2;
-  padding: 40px 20px;
+section {
+  padding: 60px 20px;
   text-align: center;
+}
+
+#hero {
+  background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
+  padding: 80px 20px;
+  border-radius: 20px;
+  margin: 20px;
+}
+
+#hero h2 {
+  font-size: 2.5rem;
+  color: #00ffcc;
+  margin-bottom: 15px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+  padding: 0 20px;
+}
+
+.product {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,255,204,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0,255,204,0.4);
+}
+
+.product img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.product h3 {
+  color: #00ffcc;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 25px;
+  background-color: #00ffcc;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #00ccaa;
 }
 
 .badge-container {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 30px;
 }
 
 .badge {
-  background-color: #ff5733;
-  color: #fff;
-  padding: 10px 15px;
-  margin: 0 10px;
+  background: #222;
+  color: #00ffcc;
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 8px rgba(0,255,204,0.2);
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.badge:hover {
+  transform: scale(1.1);
+}
+
+input[type="email"] {
+  padding: 10px;
+  width: 260px;
   border-radius: 5px;
-}
-
-/* Products Section */
-#products {
-  padding: 40px 20px;
-  background-color: #fff;
-}
-
-.product-grid {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.product {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  margin: 15px;
-  padding: 20px;
-  width: 300px;
-  text-align: center;
-}
-
-.product img {
-  max-width: 100%;
-  height: auto;
-}
-
-.product button {
+  border: 1px solid #444;
+  background-color: #1a1a1a;
+  color: #00ffcc;
   margin-top: 10px;
-  padding: 10px 20px;
-  background-color: #222;
-  color: #fff;
-  border: none;
-  cursor: pointer;
+  transition: border 0.3s ease, background 0.3s ease;
 }
 
-.product button:hover {
-  background-color: #555;
+input[type="email"]::placeholder {
+  color: #888;
 }
 
-/* Stream Section */
-#stream {
-  padding: 40px 20px;
-  background-color: #e2e2e2;
-  text-align: center;
-}
-
-video {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Deal Box */
-.deal-box {
-  background-color: #fff3cd;
-  padding: 30px 20px;
-  text-align: center;
-}
-
-.deal-box button {
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: #ffc107;
-  border: none;
-  cursor: pointer;
-}
-
-.deal-box button:hover {
-  background-color: #e0a800;
-}
-
-/* Price Tracker and Contact */
-.price-tracker,
-#contact {
-  padding: 40px 20px;
-  background-color: #fff;
-  text-align: center;
-}
-
-.price-tracker button,
-#contact button {
-  padding: 10px 20px;
-  background-color: #28a745;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-}
-
-.price-tracker button:hover,
-#contact button:hover {
-  background-color: #218838;
-}
-
-/* Footer */
 footer {
-  background-color: #222;
-  color: #fff;
+  background: #111;
+  color: #aaa;
   text-align: center;
-  padding: 20px 0;
+  padding: 30px 20px;
+  margin-top: 60px;
+  box-shadow: 0 -2px 10px rgba(0,255,204,0.2);
 }
 
 footer a {
-  color: #fff;
-  margin: 0 10px;
-  text-decoration: none;
+  color: #00ffcc;
+  margin: 0 15px;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
 }
 
 footer a:hover {
-  text-decoration: underline;
+  color: #00ccaa;
+}
+
+footer .social-icons {
+  margin-top: 15px;
+}
+
+footer .social-icons a {
+  margin: 0 10px;
+  font-size: 1.4rem;
+}
+
+video {
+  width: 100%;
+  max-width: 700px;
+  border: 3px solid #00ffcc;
+  border-radius: 15px;
+  margin-top: 30px;
+  box-shadow: 0 0 15px rgba(0,255,204,0.3);
+  transition: transform 0.3s ease;
+}
+
+video:hover {
+  transform: scale(1.02);
+}
+
+/* Gamification, Loyalty, Leaderboards */
+.challenge-box, .notification, .leaderboard, .rewards, .deal-box {
+  background: #1a1a1a;
+  color: #00ffcc;
+  border-radius: 10px;
+  margin: 30px auto;
+  padding: 25px;
+  max-width: 700px;
+  box-shadow: 0 0 12px rgba(0,255,204,0.3);
+}
+
+.challenge-box h3,
+.notification h3,
+.leaderboard h3,
+.rewards h3,
+.deal-box h3 {
+  margin-bottom: 10px;
+}
+
+.leaderboard ul, .rewards ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.leaderboard li, .rewards li {
+  padding: 10px;
+  border-bottom: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+}
+
+.notification {
+  border-left: 5px solid #00ccaa;
+  font-weight: bold;
+}
+
+.deal-box {
+  background: linear-gradient(135deg, #111, #1a1a1a);
+  border: 2px dashed #00ccaa;
+  text-align: center;
+}
+
+.deal-box p {
+  margin: 10px 0;
+}
+
+/* Price Tracker and Combo Offers */
+.price-tracker {
+  background: #1a1a1a;
+  border: 1px solid #00ffcc;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 30px auto;
+  max-width: 700px;
+}
+
+.price-tracker h3 {
+  color: #00ffcc;
+  margin-bottom: 15px;
+}
+
+.price-tracker input[type="text"] {
+  padding: 10px;
+  width: 60%;
+  border-radius: 5px;
+  border: none;
+  background: #222;
+  color: #fff;
+  transition: border 0.3s ease, background 0.3s ease;
+}
+
+.price-tracker button {
+  margin-left: 10px;
 }
